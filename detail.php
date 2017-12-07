@@ -1,3 +1,7 @@
+<?php
+    include('php/connect.php');
+    include('php/activeUser.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,15 +29,31 @@
 <body>
     <div class="fixed">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <!-- <li><a href="#news">Explore</a></li> -->
-            <li class="dropdown" style="float:left;margin-left:10px">
+        <li><a href="index.php">Home</a></li>
+        <!-- <li><a href="#news">Explore</a></li> -->
+        <?php if($data == null) { ?>
+        <li class="dropdown" style="float:left;margin-left:10px">
             <a href="#" class="dropbtn">Auth</a>
             <div class="dropdown-content">
-                <a href="login.html">Login</a>
-                <a href="register.html">Register</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
             </div>
+        </li>
+        <?php } else { ?>
+            <li class="dropdown" style="float:left;margin-left:10px">
+            <a href="#" class="dropbtn">
+                <?php echo $data["username"]; ?>
+            </a>
+            <form action="logout.php" method="POST">
+                <div class="dropdown-content">
+                <input style="display:none;" value="0" name="session">
+                <button type="submit">
+                    <a>Logout</a>
+                </button>
+                </div>
+            </form>
             </li>
+        <?php } ?>
         </ul>
     </div>
             
@@ -132,7 +152,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, animi. Libero culpa vero dolor ratione molestias natus a dolorem fuga corrupti, quisquam eligendi ab, ad labore reiciendis, placeat excepturi assumenda!
                     </p><br>
                     <div class="label bg-teal white support" style="width:35%;">
-                        <div onclick="window.location.href='pay.html'">
+                        <div onclick="window.location.href='pay.php'">
                             <b>Support Me!</b>
                         </div>
                     </div>
