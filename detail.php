@@ -46,10 +46,10 @@
             </a>
             <form action="logout.php" method="POST">
                 <div class="dropdown-content">
-                <input style="display:none;" value="0" name="session">
-                <button type="submit">
-                    <a>Logout</a>
-                </button>
+                    <input style="display:none;" value="0" name="session">
+                    <button id="logout" style="width:100%;background-color:white;">
+                        <a href="#">Logout</a>
+                    </button>
                 </div>
             </form>
             </li>

@@ -9,7 +9,6 @@ body{
     background-image: url("../image/bg-login1.jpg");
     background-size: cover;
     background-position: center;
-    
 }
 .container{
     margin: 5%;
@@ -180,4 +179,8 @@ tr td{
 
 a{
     text-decoration: none;
+}
+
+#logout:hover{
+    cursor: pointer;
 }

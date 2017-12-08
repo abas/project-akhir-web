@@ -14,3 +14,7 @@
     background-color: white;
     color: #3FB9A4;
 }
+
+#logout:hover{
+    cursor: pointer;
+}

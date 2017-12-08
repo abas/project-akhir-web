@@ -25,6 +25,8 @@
   <div class="fixed">
     <ul>
       <li><a href="index.php">Home</a></li>
+      <li><a href="#mostview">Most View</a></li>
+      <li><a href="#topcampaign">Top Campaign</a></li>
       <!-- <li><a href="#news">Explore</a></li> -->
       <?php if($data == null) { ?>
       <li class="dropdown" style="float:left;margin-left:10px">
@@ -42,8 +44,10 @@
           <form action="logout.php" method="POST">
             <div class="dropdown-content">
               <input style="display:none;" value="0" name="session">
-              <button type="submit">
-                <a>Logout</a>
+              <button id="logout" style="width:100%;background-color:white;">
+              <a href="#">
+                Logout
+              </a>
               </button>
             </div>
           </form>
@@ -66,7 +70,7 @@
       </center>
     </div>
   </div>
-  <legend id="most"></legend>
+  <legend id="topcampaign"></legend>
   <div class="container">
     <center>
       <div class="tagline" >
@@ -111,6 +115,7 @@
     </div>
   </div>
   <div class="grid-12 bg-teal" style="padding-top:5%;">
+  <legend id="mostview"></legend>
     <div class="container">
         <center>
             <div class="tagline bg-white teal">
