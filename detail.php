@@ -30,6 +30,7 @@
     <div class="fixed">
         <ul>
         <li><a href="index.php">Home</a></li>
+        <li><a href="donatur.php">Daftar Donatur</a></li>
         <!-- <li><a href="#news">Explore</a></li> -->
         <?php if($data == null) { ?>
         <li class="dropdown" style="float:left;margin-left:10px">
@@ -126,7 +127,7 @@
                     <br><br>
                     - Bagikan apa yang memenuhi syarat untuk mengatasi tantangan ini. <br>
                     - Jelaskan rencana Anda untuk memecahkan tantangan ini. <br><br>
-<br>
+                    <br>
                     <b>
                         Cara Lain yang Dapat Anda Bantuan 
                         </b>
