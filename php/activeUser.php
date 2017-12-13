@@ -6,3 +6,4 @@ $user = mysqli_query($conn, $sql);
 
 $data = mysqli_fetch_array($user);
 // echo "id: " . $data["username"];
+// print_r($data);
