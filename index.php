@@ -1,6 +1,7 @@
 <?php
-    include('php/connect.php');
+    // include('php/connect.php');
     include('php/activeUser.php');
+    include('php/postingan.php');
 
     if($data['type'] == 'admin'){
       // $admin = "<h1>NOTICE ME!</h1>";
@@ -35,11 +36,11 @@
         <li>
           <a href="donatur.php">Daftar Donatur</a>
         </li>
-        <li>
+        <!-- <li>
           <a class="pointer" onclick="toMostView()">Most View</a>
-        </li>
+        </li> -->
         <li>
-          <a class="pointer" onclick="toTopCampaign()">Top Campaign</a>
+          <a class="pointer" onclick="toTopCampaign()">Kampanye</a>
         </li>
         <!-- <li><a href="#news">Explore</a></li> -->
         <?php if($data == null) { ?>
@@ -61,9 +62,11 @@
               <button id="logout" style="width:100%;background-color:white;">
                 <a href="#">Logout</a>
               </button>
+                <a href="post.php">Create Post</a>
             </div>
           </form>
         </li>
+        
         <?php } ?>
       </ul>
     </div>
@@ -92,12 +95,44 @@
       <center>
         <div class="tagline">
           <b>
-            Top Campaign
+            Kampanye
           </b>
         </div>
       </center>
       <div class="row">
+      <?php if ($posts->num_rows > 0) {
+        // output data of each row
+        // $i=0;
+        while($row = $posts->fetch_assoc()) { 
+          // if($i==3){break;}
+          // $i++;  
+        ?>
+          
+          <center>
+          <div class='grid-4' style='padding-bottom:50px;'>
+            <div class='card' style='width:98%;'>
+              <a href='detail.php'>
+                <img src='<?php echo 'image/post/'.$row['image'];?>' alt='image not found' style='width:100%;'>
+              </a>
+              <div class='card-container'>
+                <h4>
+                  <b><?php echo $row['judul'];?></b><br>
+                  <b style="color:#3FB9A4;font-size:30px;">$<?php echo $row['dana']/1000;?>K</b>
+                </h4><br>
+                <!-- <p style='text-align:justify;font-size:small;'><?php //echo $row['deskripsi']; ?></p> -->
+                <a href='detail.php?id=<?php echo $row[id];?>' style='text-decoration:none;' class='teal'><b>Read More</b></a>
+              </div>
+            </div>
+          </div>
+        </center>
+        <?php }
+          } else {
+            echo "0 results";
+          }
 
+          $conn->close();
+          ?>
+<!--         
         <script>
           var nama = [
             "Workshop Programming",
@@ -130,11 +165,11 @@
 
             cetak("</div>");
           }
-        </script>
+        </script> -->
 
       </div>
     </div>
-    <div class="grid-12 bg-teal" style="padding-top:5%;">
+    <!-- <div class="grid-12 bg-teal" style="padding-top:5%;">
       <legend id="mostview"></legend>
       <div class="container">
         <center>
@@ -187,7 +222,7 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="grid-12 upstair">
       <center class="middle-v">
