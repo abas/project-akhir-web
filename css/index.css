@@ -195,6 +195,6 @@ a{
     padding-top: 20%;
     padding-bottom: 20%;
     background-image: url("../image/donation.png");
-    background-size: inherit cover;
+    background-size: cover;
     background-position: center;
 }

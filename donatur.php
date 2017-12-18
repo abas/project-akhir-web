@@ -2,6 +2,7 @@
     include('php/connect.php');
     include('php/listDonatur.php');
     include('php/activeUser.php');
+    include('php/totalDonation.php');
 
     if($data['type'] == 'admin'){
       // $admin = "<h1>NOTICE ME!</h1>";
@@ -74,7 +75,7 @@
         <center>
           <div class="tagline bg-white teal">
             <b>
-              Para Donatur
+              Total Donasi : $<?php echo $totalDonation/1000; ?>
             </b>
           </div>
         </center>
