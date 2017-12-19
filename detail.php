@@ -1,6 +1,12 @@
 <?php
     include('php/connect.php');
     include('php/activeUser.php');
+
+    $sqlGet = "SELECT * FROM post WHERE id=".$_GET['id'];
+
+    $detail = mysqli_query($conn, $sqlGet);
+    
+    $post = mysqli_fetch_array($detail);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,9 +70,9 @@
     <div class="detail-containe" style="margin-left:15%;margin-right: 15%;margin-top: 5%;">
         <div class="row">
             <div class="grid-8">
-                <img src='https://ukietech.com/filemanager/BLOG/4_404.jpg' alt='image/4_404.jpg' style='width:100%;' onerror=\"this.src=\'image/4_404.jpg\';\">
+                <img src='<?php echo 'image/post/'.$post['image']; ?>' alt='image/4_404.jpg' style='width:90%;' onerror=\"this.src=\'image/4_404.jpg\';\">
                 <h1 class="teal"><b>
-                    <script>
+                    <!-- <script>
                         var title = [
                                     "Workshop Programming",
                                     "Normalization City",
@@ -78,10 +84,12 @@
                                     "Security Assignment"
                                 ];
                         cetak(title[randomize(0,7)]);
-                    </script>    
+                    </script>     -->
+                    <?php echo $post['judul']; ?>
                 </b></h1>
                 <p style="text-align: justify;">
-                    <b>Ringkasan singkat</b>
+                    <?php echo $post['deskripsi'] ?>
+                    <!-- <b>Ringkasan singkat</b>
                     <br>
                     Tuliskan ide yang kamu rancang dan buatlah mereka percaya akan idemu. Hal yang harus dilakukan di bagian ini:
                     <br><br>
@@ -137,20 +145,23 @@
                         </h4>
                     - Mintalah ke  orang-orang untuk mengeluarkan kata-kata dan membuat beberapa pernyataan tentang kampanye Anda. <br>
                     - Ingatkan mereka untuk menggunakan  Campus Station ! <br>
-                </p>
+                </p> -->
             </div>
             <div class="grid-4">
                 <div class="side-bar">
                     <div class="label bg-teal white" style="margin-bottom: 10px;">
                         <h1>
-                            <b>Abas</b> 
+                            <b><?php echo $post['user'];?></b> 
                         </h1>
-                        (Ahmad Basir)
                     </div>
                     <b>Universitas Dian Nuswantoro</b><br>
                     Teknik Informatikas - S1
                     <p style="text-align: justify">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, animi. Libero culpa vero dolor ratione molestias natus a dolorem fuga corrupti, quisquam eligendi ab, ad labore reiciendis, placeat excepturi assumenda!
+                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, animi. Libero culpa vero dolor ratione molestias natus a dolorem fuga corrupti, quisquam eligendi ab, ad labore reiciendis, placeat excepturi assumenda! -->
+                        dana yang dibutuhkan <br>Rp. 
+                        <b>
+                            <?php echo $post['dana'] ?>
+                        </b>
                     </p><br>
                     <div class="label bg-teal white support" style="width:35%;">
                         <div onclick="window.location.href='pay.php'">
