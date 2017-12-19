@@ -199,3 +199,8 @@ a{
     background-size: cover;
     background-position: center;
 }
+
+button{
+    margin: 0px;
+    padding: 10px;
+}
