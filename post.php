@@ -80,7 +80,7 @@
         
         <input name="user" type="text" value="<?php echo $data['username'];?>" style="display:none;">
 
-        <button TYPE="submit" name="upload">Posting</button>
+        <button class="btn bg-teal white pointer" TYPE="submit" name="upload">Posting</button>
       </form>
       
     <script>
